@@ -8,6 +8,9 @@ from django.http import HttpResponse
 def home(request):
     return render(request, 'pages/index.html')
 
+def recipe(request, id):
+    return render(request, 'pages/recipeIndividual.html')
+
 def sobre(request):
     return HttpResponse('Sobre')
 
