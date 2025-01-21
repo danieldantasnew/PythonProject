@@ -22,7 +22,7 @@ from django.shortcuts import render
 from django.urls import path, include
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'pages/index.html')
 
 def sobre(request):
     return HttpResponse('PÁGINA SOBRE')

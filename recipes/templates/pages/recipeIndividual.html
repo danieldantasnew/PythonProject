@@ -1,9 +1,5 @@
-{% include 'partials/head.html' %}
-
-<body>
-    {% include 'partials/header.html' %}
-    <main>
-        RECEITA INDIVIDUAL
-    </main>
-</body>
-
+{% extends "global/base.html" %}
+{% block title %}REICEITA INDIVIDUAL{% endblock title %}
+{% block conteudo %}
+    <h1>A RECEITA INDIVIDUAL</h1>
+{% endblock conteudo %}
