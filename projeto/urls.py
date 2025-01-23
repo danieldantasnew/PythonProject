@@ -26,7 +26,9 @@ def home(request):
     url = 'https://api-receitas-pi.vercel.app/receitas/todas'
     response = requests.get(url)
     receitas = response.json()
-    context = {'receitas': receitas}
+    context = {'receitas': receitas,
+               'button_is_visible': True
+               }
 
     return render(request, 'pages/index.html', context)
 
