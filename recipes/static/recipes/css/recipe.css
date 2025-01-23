@@ -1,0 +1,8 @@
+.cards-receitas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card-receita {
+    background-color: red;
+}

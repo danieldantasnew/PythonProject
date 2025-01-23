@@ -2,8 +2,9 @@
 {% block title %}HOME{% endblock title %}
 {% block conteudo %}
     <h1>PAGINA HOME DE RECIPES</h1>
-    {% for receita in receitas %}
-        <div id="{{receita.id}}">
+    <section class="cards-receitas">
+        {% for receita in receitas %}
+        <div id="{{receita.id}}" class="card-receita">
             <div>
                 <img src="{{receita.link_imagem}}" alt="{{receita.receita}}">
             </div>
@@ -15,4 +16,5 @@
             </div>
         </div>
     {% endfor %}
+    </section>
 {% endblock conteudo %}
