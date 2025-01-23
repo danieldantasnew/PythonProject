@@ -15,6 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+import requests
 from django.contrib import admin
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -22,7 +23,12 @@ from django.shortcuts import render
 from django.urls import path, include
 
 def home(request):
-    return render(request, 'pages/index.html')
+    url = 'https://api-receitas-pi.vercel.app/receitas/todas'
+    response = requests.get(url)
+    receitas = response.json()
+    context = {'receitas': receitas}
+
+    return render(request, 'pages/index.html', context)
 
 def sobre(request):
     return HttpResponse('PÁGINA SOBRE')

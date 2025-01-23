@@ -2,4 +2,14 @@
 {% block title %}HOME{% endblock title %}
 {% block conteudo %}
     <h1>PAGINA HOME DE RECIPES</h1>
+    <div>
+        <div></div>
+        {% for receita in receitas %}
+        <div id="{{receita.id}}">
+            <h1>{{ receita.receita|default:"Titulo não encontrado" }}</h1>
+            <p>{{ receita.ingredientes|default:"Descrição não encontrada" }}</p>
+            <p>{{"Daniel Dantas"|default:"Autor não encontrado"}}</p>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock conteudo %}
