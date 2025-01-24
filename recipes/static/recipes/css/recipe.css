@@ -20,6 +20,11 @@
     transition: .3s;
 }
 
+.card-receita h1 {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
 .card-receita img {
     max-height: 210px;
     object-fit: cover;
@@ -28,9 +33,54 @@
     object-position: top center;
 }
 
+.sub-info {
+    font-size: .8rem;
+    gap: .5rem;
+    justify-content: space-between !important;
+}
+
+.sub-info p {
+    color: var(--color-gray-3);
+    gap: .2rem;
+    font-style: italic;
+}
+
+.content-recipe > p {
+    font-size: .8rem;
+}
+
+.sub-info p:last-child {
+    color: var( --color-primary);
+}
+
 .content-recipe {
     padding: 1rem;
 }
+
+.content-recipe p {
+    margin: .4rem 0;
+}
+
+.preparoPorcoes {
+    background-color: var(--color-gray-1);
+    padding: 1.6rem;
+    gap: 2rem;
+    flex: 1;
+    width: 100%;
+}
+
+.preparoPorcoes > div {
+    gap: .2rem;
+}
+
+.preparoPorcoes > div > p {
+    color: var(--color-gray-8);
+}
+
+.preparoPorcoes > div > p:first-child {
+    font-weight: 700;
+}
+
 
 .button-see {
     background-color: var(--color-black);

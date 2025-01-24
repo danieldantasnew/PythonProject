@@ -1,4 +1,5 @@
 from django.shortcuts import render
+import requests
 
 # Create your views here.
 
@@ -9,7 +10,13 @@ def home(request):
     return render(request, 'pages/index.html')
 
 def recipe(request, id):
-    return render(request, 'pages/recipeIndividual.html')
+    url = f'https://api-receitas-pi.vercel.app/receitas/{id}'
+    response = requests.get(url)
+    receitas = response.json()
+    context = {'receita': receitas,
+               'button_is_visible': False
+               }
+    return render(request, 'pages/recipeIndividual.html', context)
 
 def sobre(request):
     return HttpResponse('Sobre')

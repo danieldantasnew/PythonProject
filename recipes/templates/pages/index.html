@@ -1,7 +1,6 @@
 {% extends "global/base.html" %}
 {% block title %}HOME{% endblock title %}
 {% block conteudo %}
-    <h1>PAGINA HOME - RECIPES</h1>
     <section class="cards-receitas">
         {% for receita in receitas %}
         <div id="{{receita.id}}" class="card-receita">
@@ -9,13 +8,49 @@
             
             <div class="content-recipe">
                 <h1>{{ receita.receita|default:"Titulo não encontrado" }}</h1>
-                <p>{{ receita.ingredientes|default:"Descrição não encontrada" }}</p>
-                <p>{{"Daniel Dantas"|default:"Autor não encontrado"}}</p>
+                <div class="sub-info flex-row">
+                    <p class="flex-row">
+                        <i class="fa-solid fa-user"></i>
+                        {{"Daniel Dantas"|default:"Autor não encontrado"}}
+                    </p>
+                    <p class="flex-row">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        {% comment %} {{receita.created_at|default:"00/00/0000"}} {% endcomment %}
+                        00/00/0000
+                    </p>
+                    <p class="flex-row">
+                        <i class="fa-solid fa-layer-group"></i>
+                        dolores
+                    </p>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, voluptate minima qui consectetur iure ullam deserunt veritatis.</p>
             </div>
-            <a href="/recipes/{{receita.id}}" class="button-see">
-                <i class="fa-solid fa-eye"></i>
-                ver mais...
-            </a>
+            <div class="flex-column">
+                <div class="preparoPorcoes flex-row">
+                    <div class="flex-column">
+                        <p>
+                            <i class="fa-solid fa-stopwatch"></i>
+                            Preparo
+                        </p>
+                        <p>
+                            60 Minutos
+                        </p>
+                    </div>
+                    <div class="flex-column">
+                        <p>
+                            <i class="fa-solid fa-pizza-slice"></i>
+                            Porções
+                        </p>
+                        <p>
+                            77 Porções
+                        </p>
+                    </div>
+                </div>
+                <a href="/recipes/{{receita.id}}" class="button-see">
+                    <i class="fa-solid fa-eye"></i>
+                    ver mais...
+                </a>
+            </div>
         </div>
     {% endfor %}
     </section>

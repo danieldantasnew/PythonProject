@@ -1,0 +1,13 @@
+.noEffect_card {
+    transform: scale(1) !important;
+    transition: 0 !important;
+}
+
+.card-receita_individual img {
+    max-height: 400px !important;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-position: top center;
+}
+
