@@ -1,19 +1,21 @@
 {% extends "global/base.html" %}
 {% block title %}HOME{% endblock title %}
 {% block conteudo %}
-    <h1>PAGINA HOME DE RECIPES</h1>
+    <h1>PAGINA HOME - RECIPES</h1>
     <section class="cards-receitas">
         {% for receita in receitas %}
         <div id="{{receita.id}}" class="card-receita">
-            <div>
-                <img src="{{receita.link_imagem}}" alt="{{receita.receita}}">
-            </div>
+            <img src="{{receita.link_imagem}}" alt="{{receita.receita}}">
             
-            <div>
+            <div class="content-recipe">
                 <h1>{{ receita.receita|default:"Titulo não encontrado" }}</h1>
                 <p>{{ receita.ingredientes|default:"Descrição não encontrada" }}</p>
                 <p>{{"Daniel Dantas"|default:"Autor não encontrado"}}</p>
             </div>
+            <a class="button-see">
+                <i class="fa-solid fa-eye"></i>
+                ver mais...
+            </a>
         </div>
     {% endfor %}
     </section>

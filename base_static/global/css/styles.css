@@ -47,17 +47,32 @@ html {
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto;
+    background-color: var(--color-gray-1);
 }
 
 main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding: 2rem;
+}
+
+main > div {
+    margin-top: 1rem;
+}
+
+.space-content {
     flex: 1;
-    max-width: 84rem;
+    max-width: 64rem;
 }
 
 a {
     text-decoration: none;
     color: var(--color-white);
+}
+
+img {
+    max-width: 100%;
 }
