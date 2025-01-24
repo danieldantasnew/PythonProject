@@ -1,7 +1,7 @@
 .cards-receitas {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: 1.6rem;
     margin-top: 2rem;
 }
 
@@ -12,11 +12,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transform: scale(.95);
+    transform: scale(1);
 }
 
 .card-receita:hover {
-    transform: scale(1);
+    transform: scale(1.02);
     transition: .3s;
 }
 
