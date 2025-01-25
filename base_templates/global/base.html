@@ -8,8 +8,10 @@
 <body>
     {% include 'global/partials/header.html' %}
     <main>
-        <div class="space-content">
-            {%include 'partials/search.html'%}
+        <div class="space-content flex-column">
+            {% if button_is_visible %}
+                {%include 'partials/search.html'%}
+            {%endif%}
             {% block conteudo %}{% endblock conteudo %}
         </div>
     </main>

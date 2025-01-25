@@ -1,5 +1,5 @@
 {% extends "global/base.html" %}
-{% block title %}REICEITA INDIVIDUAL{% endblock title %}
+{% block title %}RECEITA | {{ receita.receita|default:"Titulo não encontrado" }}{% endblock title %}
 {% block conteudo %}
 <div id="{{receita.id}}" class="card-receita noEffect_card card-receita_individual">
     <img src="{{receita.link_imagem}}" alt="{{receita.receita}}">
@@ -21,7 +21,7 @@
                 dolores
             </p>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, voluptate minima qui consectetur iure ullam deserunt veritatis.</p>
+        <p>{{receita.modo_preparo}}</p>
     </div>
     <div class="flex-column">
         <div class="preparoPorcoes flex-row">
