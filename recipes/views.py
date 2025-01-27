@@ -7,7 +7,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def home(request):
-    return render(request, 'pages/index.html')
+    url = 'https://api-receitas-pi.vercel.app/receitas/todas'
+    response = requests.get(url)
+    receitas = response.json()
+    context = {'receitas': receitas,
+               'button_is_visible': True,
+               }
+
+    return render(request, 'pages/index.html', context)
 
 def recipe(request, id):
     url = f'https://api-receitas-pi.vercel.app/receitas/{id}'

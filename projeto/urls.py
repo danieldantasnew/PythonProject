@@ -22,22 +22,11 @@ from django.shortcuts import render
 
 from django.urls import path, include
 
-def home(request):
-    url = 'https://api-receitas-pi.vercel.app/receitas/todas'
-    response = requests.get(url)
-    receitas = response.json()
-    context = {'receitas': receitas,
-               'button_is_visible': True
-               }
-
-    return render(request, 'pages/index.html', context)
-
 def sobre(request):
     return HttpResponse('PÁGINA SOBRE')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
+    path('', include('recipes.urls')),
     path('sobre/', sobre),
-    path('recipes/', include('recipes.urls')),
 ]
